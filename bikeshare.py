@@ -142,7 +142,7 @@ def station_stats(df):
     print('\nMost Frequent Combination of Start and End Station Trips:\n\n',df.groupby(['Start Station', 'End Station']).size().nlargest(1))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('='*100)
 
 
 def trip_duration_stats(df):
@@ -158,7 +158,7 @@ def trip_duration_stats(df):
     print('Mean Trip Duration:', df['Trip Duration'].mean())
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('='*40)
 
 
 def user_stats(df):
@@ -183,7 +183,7 @@ def user_stats(df):
         print('Most Common year of Birth:', df['Birth Year'].mode()[0])
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('='*100)
 
 
 def display_raw_data(df):
@@ -206,7 +206,7 @@ def display_raw_data(df):
         else:
             raw = input("\nYour input is invalid. Please enter only 'yes' or 'no'\n").lower()
 
-    print('-'*40)
+    print('='*100)
 
 
 def main():
@@ -232,7 +232,9 @@ def main():
             print('BYE!')
             break
         else:
+            print('='*100)
             print("Restarting______________________")
+            
 
 
 if __name__ == "__main__":
