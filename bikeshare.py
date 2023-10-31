@@ -123,7 +123,7 @@ def time_stats(df):
 
 
 def station_stats(df):
-    """Displays statistics on the most popular stations and trip."""
+    """Displays statistics on the most popular stations and trips."""
 
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
@@ -204,7 +204,7 @@ def display_raw_data(df):
 
     print('-'*40)
 
-
+#This is the main function
 def main():
     while True:
         city, month, day = get_filters()
@@ -216,7 +216,7 @@ def main():
         user_stats(df)
         display_raw_data(df)
 
-
+        #The code here is used for error handling
         while True:
             restart = input('\nWould you like to restart? Enter yes or no.\n').lower()
             if restart == 'yes' or restart == 'no':
