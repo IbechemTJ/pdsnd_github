@@ -16,7 +16,22 @@ The following softwares were used to complete this project:
 + A text editor or IDE like Visual Studio Code
 + A terminal application (Terminal on Mac and Linux or GitBash on Windows)
 
+## How to Use
+To use this python script to analyse the bikeshare file you follow this steps and the corresponding prompts from the terminal:
++ Dowload the data files and the bikeshare.py file into the same directory/folder
++ Open the terminal on your computer
++ Navigate on your terminal to the directory
++ Run bikeshare.py on the terminal to start analysing the data
 
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+The following are resources I consulted to help in completing this project:
+
++ The Pandas Library Documentation:
+https://pandas.pydata.org/pandas-docs/stable/index.html
+
++ Stack Overflow: https://stackoverflow.com/
+
++ GeeksforGeeks: https://www.geeksforgeeks.org/
+
++ [Askpython.com](https://askpython.com) 
