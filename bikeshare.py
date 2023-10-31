@@ -7,6 +7,7 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'washington': 'washington.csv' }
 
 def get_filters():
+
     """
     Asks user to specify a city, month, and day to analyze.
 
@@ -15,6 +16,7 @@ def get_filters():
         (str) month - name of the month to filter by, or "all" to apply no month filter
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
+    
     print('Hello! Let\'s explore some US bikeshare data!')
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
@@ -45,11 +47,12 @@ def get_filters():
             print('Please input a valid day of the week from Monday to Sunday, or input "all" for all days')
 
     print('Value entered: ', day)
-    print('-'*40)
+    print('='*100)
     return city, month, day
 
 
 def load_data(city, month, day):
+
     """
     Loads data for the specified city and filters by month and day if applicable.
 
@@ -60,17 +63,18 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
-    # load data file into a dataframe
+
+    # Load data file into a dataframe
     df = pd.read_csv(CITY_DATA[city])
 
-    # convert the Start Time column to datetime
+    # Convert the Start Time column to datetime
     df['Start Time'] = pd.to_datetime(df['Start Time'])
 
-    # extract month and day of week from Start Time to create new columns
+    # Extract month and day of week from Start Time to create new columns
     df['month'] = df['Start Time'].dt.month
     df['day_of_week'] = df['Start Time'].dt.day_name()
 
-    # filter by month if applicable
+    # Filter by month if applicable
     if month != 'all':
         # use the index of the months list to get the corresponding int
         months = ['january', 'february', 'march', 'april', 'may', 'june']
@@ -119,7 +123,7 @@ def time_stats(df):
     print('\nThe most common hour is: ', most_common_hour)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('='*100)
 
 
 def station_stats(df):
@@ -138,7 +142,7 @@ def station_stats(df):
     print('\nMost Frequent Combination of Start and End Station Trips:\n\n',df.groupby(['Start Station', 'End Station']).size().nlargest(1))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('='*100)
 
 
 def trip_duration_stats(df):
@@ -154,7 +158,7 @@ def trip_duration_stats(df):
     print('Mean Trip Duration:', df['Trip Duration'].mean())
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('='*40)
 
 
 def user_stats(df):
@@ -179,7 +183,7 @@ def user_stats(df):
         print('Most Common year of Birth:', df['Birth Year'].mode()[0])
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('='*100)
 
 
 def display_raw_data(df):
@@ -202,7 +206,7 @@ def display_raw_data(df):
         else:
             raw = input("\nYour input is invalid. Please enter only 'yes' or 'no'\n").lower()
 
-    print('-'*40)
+    print('='*100)
 
 #This is the main function
 def main():
@@ -228,7 +232,9 @@ def main():
             print('BYE!')
             break
         else:
+            print('='*100)
             print("Restarting______________________")
+            
 
 
 if __name__ == "__main__":
